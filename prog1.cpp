@@ -64,14 +64,14 @@ public:
     }
 };
 
-class RailwaySystem
+class TrainSystem
 {
 private:
     Train trains[100];
     int totalTrains;
 
 public:
-    RailwaySystem()
+    TrainSystem()
     {
         totalTrains = 0;
     }
@@ -122,18 +122,18 @@ public:
 
 int main()
 {
-    RailwaySystem system;
+    TrainSystem tsystem;
     int choice;
 
     cout << "Enter at least 3 train records initially:\n";
     for (int i = 0; i < 3; i++)
     {
-        system.addTrain();
+        tsystem.addTrain();
     }
 
     do
     {
-        cout << "\n--- Railway Reservation System Menu ---\n";
+        cout << "\n--- Train Reservation System Menu ---\n";
         cout << "1. Add New Train Record\n";
         cout << "2. Display All Train Records\n";
         cout << "3. Search Train by Number\n";
@@ -144,11 +144,11 @@ int main()
         switch (choice)
         {
         case 1:
-            system.addTrain();
+            tsystem.addTrain();
             break;
 
         case 2:
-            system.displayAllTrains();
+            tsystem.displayAllTrains();
             break;
 
         case 3:
@@ -156,7 +156,7 @@ int main()
             int num;
             cout << "Enter Train Number to search: ";
             cin >> num;
-            system.searchTrainByNumber(num);
+            tsystem.searchTrainByNumber(num);
             break;
         }
 
